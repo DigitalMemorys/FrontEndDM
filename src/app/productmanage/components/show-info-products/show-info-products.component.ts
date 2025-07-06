@@ -1,8 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import {MatIcon} from '@angular/material/icon';
-import {MatCard, MatCardContent} from '@angular/material/card';
 import {Product} from '../../model/product.entity';
 import {ProductApiService} from '../../services/product-api.service';
 import {Category} from '../../model/category.entity';
@@ -14,9 +12,6 @@ import {CategoryApiService} from '../../services/category-api.service';
   imports: [
     CommonModule,
     FormsModule,
-    MatIcon,
-    MatCard,
-    MatCardContent,
   ],
   templateUrl: './show-info-products.component.html',
   styleUrls: ['./show-info-products.component.css']
