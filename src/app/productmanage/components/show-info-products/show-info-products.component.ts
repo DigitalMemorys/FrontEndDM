@@ -5,6 +5,7 @@ import {Product} from '../../model/product.entity';
 import {ProductApiService} from '../../services/product-api.service';
 import {Category} from '../../model/category.entity';
 import {CategoryApiService} from '../../services/category-api.service';
+import {MatCard, MatCardContent} from '@angular/material/card';
 
 @Component({
   selector: 'app-show-info-products',
@@ -12,6 +13,8 @@ import {CategoryApiService} from '../../services/category-api.service';
   imports: [
     CommonModule,
     FormsModule,
+    MatCard,
+    MatCardContent,
   ],
   templateUrl: './show-info-products.component.html',
   styleUrls: ['./show-info-products.component.css']
@@ -34,6 +37,9 @@ export class ShowInfoProductsComponent implements OnInit {
     this.category = new Category({});
   }
 
+  totalAmount = 0;
+  productsAmount = 0;
+
   ngOnInit() {
 
     this.productService.product$.subscribe(products => {
@@ -45,4 +51,10 @@ export class ShowInfoProductsComponent implements OnInit {
     })
 
   }
+
+  selectProduct(e: number) {
+    this.totalAmount += e;
+    this.productsAmount++;
+  }
+
 }

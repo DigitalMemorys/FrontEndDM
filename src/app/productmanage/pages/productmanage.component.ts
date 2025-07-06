@@ -14,8 +14,6 @@ import {ShowInfoProductsComponent} from '../components/show-info-products/show-i
     CommonModule,
     FormsModule,
     MatIcon,
-    MatCard,
-    MatCardContent,
     ShowInfoProductsComponent,
   ],
   templateUrl: './productmanage.component.html',
@@ -47,9 +45,6 @@ export class ProductmanageComponent implements OnInit {
 
   }
 
-  selectProduct(e: string) {
-
-  }
 
   deleteProduct(e: string) {
 
