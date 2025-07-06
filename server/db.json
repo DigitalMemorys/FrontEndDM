@@ -53,6 +53,15 @@
       "discontinued": true,
       "category_id": "c006",
       "image_url": "https://wongfood.vtexassets.com/arquivos/ids/397688-800-auto?v=637437330516870000&width=800&height=auto&aspect=true"
+    },
+    {
+      "id": "2590",
+      "unitPrice": 4000,
+      "unitInStock": 40,
+      "unitOnOrder": 10,
+      "discontinued": false,
+      "category_id": "2384",
+      "image_url": "https://images.pexels.com/photos/205421/pexels-photo-205421.jpeg?cs=srgb&dl=pexels-craigmdennis-205421.jpg&fm=jpg"
     }
   ],
   "categories": [
@@ -85,6 +94,11 @@
       "id": "c006",
       "category_name": "Iluminación",
       "description": "Lámparas de escritorio, LED y luces para oficina u hogar."
+    },
+    {
+      "id": "2384",
+      "category_name": "Electtic",
+      "description": "Electric"
     }
   ]
 }

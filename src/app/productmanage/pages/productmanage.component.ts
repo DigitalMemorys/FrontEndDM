@@ -1,11 +1,12 @@
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {MatIcon} from '@angular/material/icon';
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, ViewChild} from '@angular/core';
 import {Product} from '../model/product.entity';
 import {ProductApiService} from '../services/product-api.service';
 import {MatCard, MatCardContent} from '@angular/material/card';
 import {ShowInfoProductsComponent} from '../components/show-info-products/show-info-products.component';
+import {CreateProductComponent} from '../components/create-product/create-product.component';
 
 @Component({
   selector: 'app-productmanage',
@@ -15,6 +16,7 @@ import {ShowInfoProductsComponent} from '../components/show-info-products/show-i
     FormsModule,
     MatIcon,
     ShowInfoProductsComponent,
+    CreateProductComponent,
   ],
   templateUrl: './productmanage.component.html',
   styleUrls: ['./productmanage.component.css']
@@ -22,6 +24,8 @@ import {ShowInfoProductsComponent} from '../components/show-info-products/show-i
 
 export class ProductmanageComponent implements OnInit {
   name="productmanage";
+
+  @ViewChild(CreateProductComponent) createProductComponent !: CreateProductComponent;
 
   protected product !: Product;
 
@@ -41,8 +45,8 @@ export class ProductmanageComponent implements OnInit {
 
   }
 
-  addNewProduct(e: string) {
-
+  addNewProduct() {
+    this.createProductComponent.addNewProduct();
   }
 
 

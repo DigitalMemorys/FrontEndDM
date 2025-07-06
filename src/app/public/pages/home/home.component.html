@@ -6,17 +6,22 @@
     </header>
     <div class="container-cards">
       <mat-card>
-        <header class="product-name">Phone</header>
-        <div class="product-info-container">
-          <div class="product-info piw">
-            <ul>
-              <li>Ram: ...</li>
-            </ul>
-          </div>
-          <div class="product-picture piw">
-            <img src="#">
-          </div>
-        </div>
+          @if (productSource.length > 0){
+            @for (product of randomProducts; track product.id){
+              <div class="product-info-container">
+                <div class="product-info piw">
+                  <ul>
+                    <li>Price : {{product.unitPrice}}</li>
+                  </ul>
+                </div>
+                <div class="product-picture piw">
+                  <img [src]="product.image_url" style="height: 5rem">
+                </div>
+              </div>
+            }
+          } @else {
+            <h6>No products available</h6>
+          }
       </mat-card>
     </div>
   </mat-card-content>

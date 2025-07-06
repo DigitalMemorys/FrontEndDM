@@ -105,10 +105,10 @@ mat-card-content{
       flex-direction: row;
       justify-content: space-between;
       flex-wrap: wrap;
+      margin: 0.5rem 0;
     }
 
     .product-info{
-
       li{
         margin-left: -2rem;
       }
@@ -118,7 +118,6 @@ mat-card-content{
     }
 
     .product-picture{
-      border: 1px solid black;
       display: flex;
       flex-direction: column;
       justify-content: center;
