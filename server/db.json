@@ -1,0 +1,90 @@
+{
+  "products": [
+    {
+      "id": "p001",
+      "unitPrice": 499.99,
+      "unitInStock": 25,
+      "unitOnOrder": 10,
+      "discontinued": false,
+      "category_id": "c001",
+      "image_url": "https://cdn.thewirecutter.com/wp-content/media/2024/11/cheapgaminglaptops-2048px-7981.jpg"
+    },
+    {
+      "id": "p002",
+      "unitPrice": 39.99,
+      "unitInStock": 100,
+      "unitOnOrder": 0,
+      "discontinued": false,
+      "category_id": "c002",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW4SXGWSw-ResVbhjBp_65wSus-vU4IaqqhHmBLGnVtHyiTQhreO3a2hXWCN245wyWpSg&usqp=CAU"
+    },
+    {
+      "id": "p003",
+      "unitPrice": 229.5,
+      "unitInStock": 15,
+      "unitOnOrder": 5,
+      "discontinued": true,
+      "category_id": "c003",
+      "image_url": "https://visso.com.pe/wp-content/uploads/2021/01/sitindustrial-1024x1024.jpg"
+    },
+    {
+      "id": "p004",
+      "unitPrice": 59.99,
+      "unitInStock": 80,
+      "unitOnOrder": 20,
+      "discontinued": false,
+      "category_id": "c004",
+      "image_url": "https://http2.mlstatic.com/D_NQ_896861-MLA70799053681_072023-OO.jpg"
+    },
+    {
+      "id": "p005",
+      "unitPrice": 19.99,
+      "unitInStock": 200,
+      "unitOnOrder": 0,
+      "discontinued": false,
+      "category_id": "c005",
+      "image_url": "https://ciclosfera.com/img/4f10420207d54760767d1334828ba186.872.0.0.0.51ed092c.webp"
+    },
+    {
+      "id": "p006",
+      "unitPrice": 129.99,
+      "unitInStock": 12,
+      "unitOnOrder": 8,
+      "discontinued": true,
+      "category_id": "c006",
+      "image_url": "https://wongfood.vtexassets.com/arquivos/ids/397688-800-auto?v=637437330516870000&width=800&height=auto&aspect=true"
+    }
+  ],
+  "categories": [
+    {
+      "id": "c001",
+      "category_name": "Electrónica",
+      "description": "Dispositivos y equipos electrónicos."
+    },
+    {
+      "id": "c002",
+      "category_name": "Calzado",
+      "description": "Zapatillas, sandalias y calzado deportivo."
+    },
+    {
+      "id": "c003",
+      "category_name": "Oficina",
+      "description": "Mobiliario y accesorios para oficina."
+    },
+    {
+      "id": "c004",
+      "category_name": "Accesorios de Computadora",
+      "description": "Periféricos como teclados, ratones y monitores."
+    },
+    {
+      "id": "c005",
+      "category_name": "Hidratación",
+      "description": "Botellas de agua, termos y accesorios relacionados."
+    },
+    {
+      "id": "c006",
+      "category_name": "Iluminación",
+      "description": "Lámparas de escritorio, LED y luces para oficina u hogar."
+    }
+  ]
+}

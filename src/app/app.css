@@ -1,0 +1,107 @@
+*{
+  box-sizing: border-box ;
+  padding: 0;
+  margin: 0;
+}
+
+*::-webkit-scrollbar{
+  background: transparent;
+  width: 0;
+}
+
+.mat-spacer {
+  flex: 1 1 auto;
+}
+
+
+.content {
+  height: 100vh;
+  padding: 16px;
+  max-width: 1520px;
+  margin: 0 auto;
+  font-size: 16px;
+  background: #fff;
+}
+
+
+mat-icon {
+  color: black !important;
+}
+
+a[mat-button] {
+  margin-left: 20px;
+  color: black !important;
+}
+
+button[mat-icon-button] {
+  color: black !important;
+}
+
+.mat-list-item {
+  color: black;
+}
+
+
+.mat-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.mat-list-item mat-icon {
+  color: black;
+}
+
+
+mat-toolbar {
+  background-color: white !important;
+  border-bottom: 2px solid #000;
+}
+
+mat-sidenav {
+  width: 200px!important;
+  border-right: none;
+  border-radius: 0!important;
+  padding: 16px 0;
+  left: 0;
+}
+
+
+mat-list-item {
+  height: 4rem!important;
+  border-radius: 10px 0 0 10px!important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  text-align: start;
+  position: relative;
+  img{
+  }
+  span{
+    font-weight: bold;
+    position: relative;
+    margin-top: -70px;
+  }
+}
+
+.active-option{
+  background-color: #ffffff;
+  span{
+    color: #000!important;
+  }
+}
+
+.user-icon{
+  padding: 5px;
+  width: 40px;
+  font-size: 30px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.notification-icon,
+.user-icon{
+  cursor: pointer;
+}
+
+

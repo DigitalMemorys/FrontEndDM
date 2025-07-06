@@ -1,0 +1,26 @@
+<div class="info-container">
+  <div class="listTable">
+    @if (productSource.length > 0){
+      @for (product of productSource; track product.id) {
+        <ul class="product-info">
+          <img [src]="product.image_url" alt="product image">
+          <h6> Price : {{ product.unitPrice }}</h6>
+          <div class="center">
+            @for (category of categorySource; track category.id){
+              @if (category.id === product.category_id){
+                <li>Category: {{ category.category_name }}</li>
+              }
+            }
+            <li> Units in stock: {{ product.unitInStock }}</li>
+            <br>
+            <button role="button" type="button">
+              get product
+            </button>
+          </div>
+        </ul>
+      }
+    } @else {
+      <h6>No products available</h6>
+    }
+  </div>
+</div>
