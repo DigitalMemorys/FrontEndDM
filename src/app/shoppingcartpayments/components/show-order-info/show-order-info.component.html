@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<mat-card class="cart-container">
+  <mat-card-content>
+    <h2 style="margin-bottom: 16px;">Carrito de compras</h2>
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+      <ul class="cart-list">
+        <li *ngFor="let item of cartItems" class="cart-item">
+          <img [src]="item.imageUrl" width="60" height="60" class="cart-img">
+          <span class="cart-name">{{ item.name }}</span>
+          <span class="cart-price">{{ item.price | number:'1.2-2' }} $</span>
+          <span class="cart-qty">x{{ item.quantity }}</span>
+          <button class="cart-btn" (click)="remove(item.productId)">Eliminar</button>
+        </li>
+      </ul>
+      <div class="cart-total">
+        <h3>Total: {{ total | number:'1.2-2' }} $</h3>
+        <button class="cart-btn" (click)="clear()">Vaciar carrito</button>
+      </div>
+    </div>
+    <ng-template #emptyCart>
+      <p>El carrito está vacío.</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

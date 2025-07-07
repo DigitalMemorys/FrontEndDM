@@ -12,6 +12,10 @@ import {StatusDeliverApiService} from '../../productmanage/services/statusDelive
 import {OrderDetailApiService} from '../../productmanage/services/orderDetail-api.service';
 import {Order} from '../model/order.entity';
 import {OrderApiService} from '../services/order-api.service';
+import {
+  ShowInfoProductsComponent
+} from '../../productmanage/components/show-info-products/show-info-products.component';
+import {ShowOrderInfoComponent} from '../components/show-order-info/show-order-info.component';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -19,11 +23,12 @@ import {OrderApiService} from '../services/order-api.service';
   imports: [
     CommonModule,
     FormsModule,
+    ShowOrderInfoComponent,
   ],
   templateUrl: './shoppingcartpayments.components.html',
   styleUrls: ['./shoppingcartpayments.components.css']
 })
-export class ShowOrderInfoComponent implements OnInit {
+export class ShoppingcartpaymentsComponent implements OnInit {
   name = "showOrderInfoComponent";
 
   protected product !: Product;

@@ -10,6 +10,8 @@ import {OrderDetail} from '../../model/orderDetail';
 import {StatusDeliver} from '../../model/statusDeliver';
 import {StatusDeliverApiService} from '../../services/statusDeliver-api.service';
 import {OrderDetailApiService} from '../../services/orderDetail-api.service';
+// Importa el CartService y la interfaz CartItem
+import { CartService, CartItem } from '../../../shoppingcartpayments/services/cart.service';
 
 @Component({
   selector: 'app-show-info-products',
@@ -43,6 +45,8 @@ export class ShowInfoProductsComponent implements OnInit {
   private categoryService = inject(CategoryApiService)
   private statusDeliverService = inject(StatusDeliverApiService)
   private orderDetailService = inject(OrderDetailApiService)
+  // Inyecta el CartService
+  private cartService = inject(CartService)
 
   constructor() {
     this.product = new Product({});
@@ -79,6 +83,15 @@ export class ShowInfoProductsComponent implements OnInit {
     this.totalAmount += e.unitPrice;
     this.productsAmount++;
     this.arrProductsIds.push(e.id);
+
+    // Agrega el producto al carrito compartido
+    this.cartService.addItem({
+      productId: e.id,
+      name: e.id, // Aquí falta cambiar por el nombre del producto, de momento se usa el id
+      price: e.unitPrice,
+      quantity: 1,
+      imageUrl: e.image_url
+    });
   }
 
   generateId(): number{
