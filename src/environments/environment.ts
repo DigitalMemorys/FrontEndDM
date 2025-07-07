@@ -5,4 +5,5 @@ export const environment = {
   categoryEndPointPath: "/categories",
   statusDeliverEndPointPath: "/status_delivers",
   orderDetailEndPointPath: "/order_details",
+  orderEndPointPath: "/orders",
 };

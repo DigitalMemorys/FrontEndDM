@@ -40,7 +40,7 @@ export class App implements OnInit {
   otherOptions = [
     { icon: 'https://cdn-icons-png.flaticon.com/512/25/25694.png', path: '/home', title: 'HOME' },
     { icon: 'https://cdn-icons-png.flaticon.com/512/8189/8189068.png', path: '/productManage', title: 'PRODUCTS' },
-    { icon: 'https://cdn-icons-png.flaticon.com/512/3514/3514491.png', path: '/cart', title: 'CART' },
+    { icon: 'https://cdn-icons-png.flaticon.com/512/3514/3514491.png', path: '/shoppingCart', title: 'CART' },
     { icon: 'https://cdn-icons-png.flaticon.com/512/1011/1011322.png', path: '/globalChat', title: 'GLOBAL CHAT' },
   ];
 

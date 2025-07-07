@@ -2,7 +2,7 @@ export class OrderDetail {
   id: string = "";
   unit_price: number = 0;
   quantity: number = 0;
-  product_id: string; // antes: product_id: string
+  product_id: string;
   status_deliver_id: string = "";
   order_id: string = "";
 
