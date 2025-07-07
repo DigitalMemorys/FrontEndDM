@@ -6,6 +6,10 @@ import {ProductApiService} from '../../services/product-api.service';
 import {Category} from '../../model/category.entity';
 import {CategoryApiService} from '../../services/category-api.service';
 import {MatCard, MatCardContent} from '@angular/material/card';
+import {OrderDetail} from '../../model/orderDetail';
+import {StatusDeliver} from '../../model/statusDeliver';
+import {StatusDeliverApiService} from '../../services/statusDeliver-api.service';
+import {OrderDetailApiService} from '../../services/orderDetail-api.service';
 
 @Component({
   selector: 'app-show-info-products',
@@ -25,20 +29,31 @@ export class ShowInfoProductsComponent implements OnInit {
 
   protected product !: Product;
   protected category !: Category;
+  protected statusDeliver !: StatusDeliver;
+  protected orderDetail !: OrderDetail;
 
   protected productSource: Product[] = [];
   protected categorySource: Category[] = [];
+  protected statusDeliverSource: StatusDeliver[] = [];
+  protected orderSource: OrderDetail[] = [];
+
+  arrProductsIds: string[] = [];
 
   private productService = inject(ProductApiService)
   private categoryService = inject(CategoryApiService)
+  private statusDeliverService = inject(StatusDeliverApiService)
+  private orderDetailService = inject(OrderDetailApiService)
 
   constructor() {
     this.product = new Product({});
     this.category = new Category({});
+    this.statusDeliver = new StatusDeliver({});
+    this.orderDetail = new OrderDetail({});
   }
 
   totalAmount = 0;
   productsAmount = 0;
+  status = ""
 
   ngOnInit() {
 
@@ -50,11 +65,61 @@ export class ShowInfoProductsComponent implements OnInit {
       this.categorySource = category;
     })
 
+    this.statusDeliverService.status$.subscribe(status => {
+      this.statusDeliverSource = status;
+    })
+
+    this.orderDetailService.orderDetails$.subscribe(orderDetail => {
+      this.orderSource = orderDetail;
+    })
+
   }
 
-  selectProduct(e: number) {
-    this.totalAmount += e;
+  selectProduct(e: Product) {
+    this.totalAmount += e.unitPrice;
     this.productsAmount++;
+    this.arrProductsIds.push(e.id);
+  }
+
+  generateId(): number{
+    return Math.floor(Math.random() * 1423 + 1345);
+  }
+
+  registerProduct() {
+    let amountOneProduct = 0;
+
+    this.productSource.forEach(product => {
+      let amountOneProduct = 0;
+
+      this.arrProductsIds.forEach(productId => {
+        if (productId === product.id) {
+          amountOneProduct++;
+        }
+      });
+
+      if (amountOneProduct > 0) {
+
+        this.statusDeliverSource.forEach(sd =>{
+          if (sd.type === "PENDING"){
+            this.status = sd.id
+          }
+        })
+
+        const newOrderDetail = new OrderDetail({
+          id: this.generateId().toString(),
+          unit_price: product.unitPrice,
+          quantity: amountOneProduct,
+          product_id: product.id,
+          status_deliver_id: this.status,
+          order_id: ""
+        });
+
+        this.orderDetailService.createOrderDetail(newOrderDetail).subscribe();
+        this.totalAmount = 0;
+        this.productsAmount = 0;
+      }
+    });
+
   }
 
 }

@@ -13,7 +13,7 @@
             }
             <li> Units in stock: {{ product.unitInStock }}</li>
             <br>
-            <button role="button" type="button" (click)="selectProduct(product.unitPrice)">
+            <button role="button" type="button" (click)="selectProduct(product)">
               get product
             </button>
           </div>
@@ -27,7 +27,7 @@
     <mat-card-content>
       <h3>Products: {{ productsAmount }}</h3>
       <h3>Total Amount: {{ totalAmount  | number: '1.2-2' }} $</h3>
-      <button role="button" type="button">Send to cart</button>
+      <button role="button" type="button" (click)="registerProduct()">Send to cart</button>
     </mat-card-content>
   </mat-card>
 </div>

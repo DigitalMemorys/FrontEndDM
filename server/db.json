@@ -100,5 +100,30 @@
       "category_name": "Electtic",
       "description": "Electric"
     }
+  ],
+  "orders": [],
+  "order_details": [
+    {
+      "id": "1690",
+      "unit_price": 499.99,
+      "quantity": 1,
+      "product_id": "p001",
+      "status_deliver_id": "",
+      "order_id": ""
+    },
+    {
+      "id": "1674",
+      "unit_price": 499.99,
+      "quantity": 1,
+      "product_id": "p001",
+      "status_deliver_id": "5322",
+      "order_id": ""
+    }
+  ],
+  "status_delivers": [
+    {
+      "id": "5322",
+      "type": "PENDING"
+    }
   ]
 }

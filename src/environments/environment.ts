@@ -3,4 +3,6 @@ export const environment = {
   serverBasePath: "http://localhost:3000/api/v1",
   productEndPointPath: "/products",
   categoryEndPointPath: "/categories",
+  statusDeliverEndPointPath: "/status_delivers",
+  orderDetailEndPointPath: "/order_details",
 };
