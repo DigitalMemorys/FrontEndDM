@@ -1,0 +1,74 @@
+<script src="../services/publishing-api.service.ts"></script>
+<div>
+  <button class="add-publishing" >
+    Add Publishing
+    <mat-icon>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
+    </mat-icon>
+  </button>
+  <main>
+    <div class="publication-container">
+      @if (publishingSource.length > 0){
+        @for (publishing of publishingSource; track publishing.id){
+          <ul>
+            <h3>{{ publishing.title }}</h3>
+            <div class="img-container">
+              <img [src]="publishing.image_url" alt="publishing-image">
+            </div>
+            <li>{{ publishing.content }}</li>
+            <li>{{ publishing.created_at }}</li>
+            @for (user of userSource; track user.id){
+              @if (user.id === publishing.user_id){
+                <li>
+                  <mat-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
+                  </mat-icon>
+                  {{ user.name }}
+                </li>
+              }
+            }
+          </ul>
+        }
+      } @else {
+        <h6>No publications available</h6>
+      }
+    </div>
+    <div class="comment-container">
+      <h2>Comments</h2>
+      <div class="comment-content">
+        @if (commentSource.length > 0){
+          @for (comment of commentSource; track comment.id){
+            <div class="comment-user-profile">
+              <div class="header">
+                <mat-icon>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
+                </mat-icon>
+              </div>
+              <div class="content">
+                <div class="user-info">
+                  @for (user of userSource; track user.id) {
+                    @if (user.id === comment.user_id){
+                      <span>{{ user.name }}</span>
+                    }
+                  }
+                  <span>{{ comment.created_at }}</span>
+                </div>
+                <div class="message">
+                  <p>{{ comment.content }}</p>
+                </div>
+              </div>
+            </div>
+          }
+        }@else{
+            <h6>Be the first comment</h6>
+        }
+      </div>
+      <div class="input-comment">
+        <input>
+        <button>
+          send
+        </button>
+      </div>
+    </div>
+  </main>
+</div>

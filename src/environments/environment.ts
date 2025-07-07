@@ -6,4 +6,8 @@ export const environment = {
   statusDeliverEndPointPath: "/status_delivers",
   orderDetailEndPointPath: "/order_details",
   orderEndPointPath: "/orders",
+  userEndPointPath: "/users",
+  ubiGeoEndPointPath: "/ubi_geos",
+  publishingEndPointPath: "/publications",
+  commentEndPointPath: "/comments",
 };

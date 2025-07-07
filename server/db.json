@@ -125,5 +125,149 @@
       "id": "5322",
       "type": "PENDING"
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Ana Rodríguez",
+      "email": "ana.rodriguez@example.com",
+      "password": "hashed_password_123",
+      "phone": "+51 987654321",
+      "address": "Av. El Sol 123, Cusco",
+      "ubi_geo_id": "64b0a1e5f3c12a0012ef001a"
+    },
+    {
+      "id": "2",
+      "name": "Luis Fernández",
+      "email": "luis.fernandez@example.com",
+      "password": "hashed_password_456",
+      "phone": "+51 912345678",
+      "address": "Jr. Arequipa 456, Lima",
+      "ubi_geo_id": "64b0a1e5f3c12a0012ef001b"
+    },
+    {
+      "id": "3",
+      "name": "María Chávez",
+      "email": "maria.chavez@example.com",
+      "password": "hashed_password_789",
+      "phone": "+51 998877665",
+      "address": "Calle Los Olivos 789, Arequipa",
+      "ubi_geo_id": "64b0a1e5f3c12a0012ef001c"
+    },
+    {
+      "id": "4",
+      "name": "Carlos Rivas",
+      "email": "carlos.rivas@example.com",
+      "password": "hashed_password_321",
+      "phone": "+51 911223344",
+      "address": "Av. La Marina 321, Trujillo",
+      "ubi_geo_id": "64b0a1e5f3c12a0012ef001d"
+    },
+    {
+      "id": "5",
+      "name": "Lucía Mendoza",
+      "email": "lucia.mendoza@example.com",
+      "password": "hashed_password_654",
+      "phone": "+51 933445566",
+      "address": "Jr. San Martín 654, Piura",
+      "ubi_geo_id": "64b0a1e5f3c12a0012ef001e"
+    }
+  ],
+  "ubi_geos": [
+    {
+      "id": "64b0a1e5f3c12a0012ef001a",
+      "city_name": "Cusco",
+      "country_name": "Perú"
+    },
+    {
+      "id": "64b0a1e5f3c12a0012ef001b",
+      "city_name": "Lima",
+      "country_name": "Perú"
+    },
+    {
+      "id": "64b0a1e5f3c12a0012ef001c",
+      "city_name": "Arequipa",
+      "country_name": "Perú"
+    },
+    {
+      "id": "64b0a1e5f3c12a0012ef001d",
+      "city_name": "Trujillo",
+      "country_name": "Perú"
+    },
+    {
+      "id": "64b0a1e5f3c12a0012ef001e",
+      "city_name": "Piura",
+      "country_name": "Perú"
+    }
+  ],
+  "publications": [
+    {
+      "id": "p1",
+      "title": "Reseña: Kit de reciclaje doméstico",
+      "content": "Compré el kit de reciclaje para casa y realmente me ha ayudado a organizar los residuos. Les cuento mi experiencia.",
+      "created_at": "2025-07-01T10:00:00Z",
+      "user_id": "1",
+      "image_url": "https://i.bolder.run/r/czoyMjU4LGc6MTAwMHg/56bc9813/946460-kit_de_reciclaje_5_cajones_grandes2.JPG"
+    },
+    {
+      "id": "p2",
+      "title": "Comparativa de productos ecológicos para limpieza",
+      "content": "Probé varios productos biodegradables para limpiar mi hogar. Aquí va mi análisis de calidad y precio.",
+      "created_at": "2025-07-02T14:30:00Z",
+      "user_id": "2",
+      "image_url": "https://calendarioperu.com/img/blog/2023/9/-dprx640.jpg"
+    },
+    {
+      "id": "p3",
+      "title": "¿Vale la pena comprar botellas reutilizables?",
+      "content": "Revisamos marcas y precios de botellas reutilizables. ¿Son duraderas? ¿Contaminan menos? Aquí mi opinión.",
+      "created_at": "2025-07-03T09:45:00Z",
+      "user_id": "3",
+      "image_url": "https://www.mercadonegro.pe/wp-content/uploads/2019/04/Botella.jpg"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c1",
+      "content": "Yo también compré ese kit y es súper práctico. Lo recomiendo.",
+      "created_at": "2025-07-01T12:00:00Z",
+      "user_id": "2",
+      "publishing_id": "p1"
+    },
+    {
+      "id": "c2",
+      "content": "¿Incluye contenedores con tapa? Estoy pensando en comprarlo.",
+      "created_at": "2025-07-01T13:10:00Z",
+      "user_id": "4",
+      "publishing_id": "p1"
+    },
+    {
+      "id": "c3",
+      "content": "Excelente comparativa. Yo uso el detergente ecológico X y funciona genial.",
+      "created_at": "2025-07-02T15:00:00Z",
+      "user_id": "5",
+      "publishing_id": "p2"
+    },
+    {
+      "id": "c4",
+      "content": "Ojalá incluyas precios en tu siguiente post, eso ayuda mucho.",
+      "created_at": "2025-07-02T16:20:00Z",
+      "user_id": "1",
+      "publishing_id": "p2"
+    },
+    {
+      "id": "c5",
+      "content": "Yo compré una botella térmica y me ha durado más de un año. Buena inversión.",
+      "created_at": "2025-07-03T11:00:00Z",
+      "user_id": "4",
+      "publishing_id": "p3"
+    },
+    {
+      "id": "c6",
+      "content": "¿Cuál recomiendas para niños? Estoy buscando una para mi hijo.",
+      "created_at": "2025-07-03T11:45:00Z",
+      "user_id": "5",
+      "publishing_id": "p3"
+    }
   ]
 }
