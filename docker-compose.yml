@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # Frontend service
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"  # Development port mapping
+      - "80:80"      # Production port mapping
+    volumes:
+      - ./:/app           # For development (live reload)
+      - /app/node_modules # Isolate node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true # Enable file watching in Docker
+    command: npm run start
+
+  # Optional: Backend API service example
+  # api:
+  #   image: your-backend-image
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - DB_HOST=database
+  #     - DB_PORT=5432
+
+  # Optional: Database service example
+  # database:
+  #   image: postgres:13
+  #   environment:
+  #     - POSTGRES_PASSWORD=yourpassword
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+
+# volumes:
+#   pgdata:
